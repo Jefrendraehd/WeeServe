@@ -321,3 +321,36 @@ class Config():
 	def LogLister(self, stufftolog):
 		self.logger.Log(stufftolog)
 
+
+
+import subprocess
+import os
+
+
+def update_git_repo(repo_path):
+    """
+    Performs a git pull in the specified repository path.
+    """
+    if not os.path.isdir(os.path.join(repo_path, '.git')):
+        return f"Error: {repo_path} is not a git repository."
+....
+    # Change to the repository directory
+    os.chdir(repo_path)
+....
+    try:
+        # Execute the git pull command
+        result = subprocess.check_output(['git', 'pull'], stderr=subprocess.STDOUT, text=True)
+        return f"Git pull successful in {repo_path}:\n{result}"
+    except subprocess.CalledProcessError as e:
+        return f"Error during git pull in {repo_path}:\n{e.output}"
+    except Exception as e:
+        return f"An unexpected error occurred: {e}"
+
+# Example usage (can be triggered by a command in WeeChat)
+def git_update_command(data, buffer, args):
+    # Replace with the actual path to your local repository
+    path_to_repo = os.path.expanduser("~/.weechat/scripts/my-external-scripts").
+....
+    result = update_git_repo(path_to_repo)
+    weechat.prnt(buffer, result)
+    return weechat.RC_OK
