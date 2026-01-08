@@ -468,7 +468,7 @@ base_logger = MyLogger(bot.irc.botname, bot.server.logs_directory)
 list_trigger = bot.server.list_trigger     #list requesting
 file_trigger = bot.server.file_trigger     #file requesting
 #serv_trigger = bot.server.serv_trigger     #for bot interaction buffer
-serving_buffer_pointer = weechat.buffer_search("", "irc.dejatoons:#rpg-books")
+serving_buffer_pointer = weechat.buffer_search("", "irc.dejatoons.#rpg-books")
 advert_timer = bot.server.advert_timer
 
 
