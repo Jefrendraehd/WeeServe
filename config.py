@@ -194,10 +194,10 @@ class Config():
 				self.ircdata.chan_password = new_value
 			case "botname":
 				self.ircdata.botname = new_value
-				self.serverdata.list_trigger = "@" + self.ircdata.botname
-				self.serverdata.file_trigger = "!" + self.ircdata.botname
-				self.serverdata.serv_trigger = "&" + self.ircdata.botname
-				self.serverdata.ctcp_trigger = "@" + self.ircdata.botname + "-ctcp"
+				self.serverdata.list_trigger = self.miscdata.list_prefix_char + self.ircdata.botname
+				self.serverdata.file_trigger =  self.miscdata.file_prefix_char + self.ircdata.botname
+				self.serverdata.serv_trigger = self.miscdata.cmnd_prefix_char + self.ircdata.botname
+				self.serverdata.ctcp_trigger = self.miscdata.list_prefix_char + self.ircdata.botname + "-ctcp"
 				self.serverdata.library_file = self.ircdata.botname + ".json"
 				self.serverdata.list_file = self.ircdata.botname + ".txt"
 				self.serverdata.ctcp_file = self.ircdata.botname + "-ctcp.txt"
