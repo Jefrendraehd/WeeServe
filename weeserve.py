@@ -50,8 +50,6 @@ respond_to_search = False
 list_response = []
 find_response = []
 
-clr = {'title': Clr.red, 'label': Clr.green, 'value': Clr.cyan, 'unused': Clr.yellow}
-
 def TimeStamp():
 	time_stamp = datetime.datetime.now().strftime("%H:%M:%S")
 	return time_stamp + " "
@@ -114,6 +112,7 @@ class Fserve():
 
 		self.advert_timer = 900
 		self.advert = self.server.advert_text
+    self.advert_enabled = False
 		self.logger = MyLogger(self.irc.botname, self.server.logs_directory)
 		#self.config.ShowConfig()
 
@@ -152,6 +151,8 @@ class Fserve():
 		self.server.server_enabled = False
 
 	def ShowAdvert(self):
+    if not self.advert_enabled:
+     return
 		if self.server.server_enabled:
 			print("advert enabled")
 			#self.serving_channel_handle = self.irc.irc_server + self.irc.serve_channel
