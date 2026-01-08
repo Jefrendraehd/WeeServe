@@ -50,10 +50,6 @@ respond_to_search = False
 list_response = []
 find_response = []
 
-def TimeStamp():
-	time_stamp = datetime.datetime.now().strftime("%H:%M:%S")
-	return time_stamp + " "
-
 def NewLogName(tempname):
 	suffix = datetime.datetime.now().strftime("%y%m%d_%H%M%S")
 	filename = tempname + "_" +  suffix + ".log"
