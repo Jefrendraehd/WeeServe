@@ -38,6 +38,7 @@ class MyLogger():
 				return
 			self.SayTo.Buffer(self.buffer_name, stufftolog)
 			stufftolog = self.TimeStamp() + stufftolog
+               stufftolog = weechat.string_remove_color(stufftolog)
 			self.log.append(stufftolog.strip())
 			with open(self.full_log_path, 'w') as outfile:
 				for entry in self.log:
