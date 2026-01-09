@@ -153,7 +153,7 @@ class Fserve():
 			print("advert enabled")
 			#self.serving_channel_handle = self.irc.irc_server + self.irc.serve_channel
 			#cmnd_chan = weechat.buffer_search("irc", self.irc.serve_channel)
-			cmnd_chan = weechat.buffer_search("", "irc.dejatoons.net.#rpg-books")
+			cmnd_chan = weechat.buffer_search("", "irc.dejatoons.#rpg-books")
 			weechat.command(cmnd_chan, self.advert)
 			print("sent advert")
 			#self.SayTo.Buffer(self.irc.serve_channel, self.advert)
