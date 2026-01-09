@@ -11,6 +11,9 @@ from .color import color as Clr
 from .mylogger import MyLogger
 from .sayto import SayTo
 
+
+gitrepo = "https://github.com/jefrendraehd/weeserve"
+
 basepath = weechat.info_get("weechat_data_dir","")
 script_dir = basepath + "/python/weeserve/"
 script_data = script_dir + "weeservedata/"
