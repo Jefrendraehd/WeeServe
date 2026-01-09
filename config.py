@@ -36,8 +36,8 @@ class MiscData:
 	list_prefix_char: str = ""     #"@"
 	file_prefix_char: str = ""     #"!"
 	cmnd_prefix_char: str = ""     #"&"
-	weeleech_buffer:  str = ""     #"WeeChat"
-    github_repo:    str = ""
+	weeserve_buffer:  str = ""     #"WeeChat"
+	github_repo:      str = ""     #weeserve github repo
 
 @dataclass
 class IrcData:
